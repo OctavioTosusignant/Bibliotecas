@@ -1,2 +1,1 @@
-# Bibliotecas
-Stack &amp; Queue
+# Stack
