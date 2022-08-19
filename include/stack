@@ -1,0 +1,63 @@
+#if !defined(STACK)
+#define STACK
+
+#include <cstddef>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+
+
+typedef struct{
+    char caracter[50];
+}DATO;
+
+typedef struct node{
+    DATO dato;
+    struct node *next;
+}NODO;
+
+typedef struct{
+    NODO *head;
+    int size;
+}PILA;
+
+/** @brief Inicializa la estructura 
+ * @param pila Nueva pila para ir anadiendo elementos
+ */
+
+void nueva_pila(PILA *pila);
+
+/** @brief Inicializa los nodos de la estructura
+ * @param nodo Nuevo elemento para anadir a la estructura
+ */
+
+void nuevo_nodo(NODO *nodo);
+
+/** @brief Verifica si la pila esta vacia o no
+ * @param pila Recibe un dato de tipo PILA para acceder a la cima de la pila
+ * @return 1 En caso de que la estructura este vacia
+ * @return 0 En caso de que la estructura no este vacia
+ */
+
+int IsEmpty(PILA pila);
+
+/** @brief Operacion correspondiente a anadir elementos a la pila
+ * @param pila La estructura a la cual se le anadiran elementos
+ * @param car El elemento a anadir en la estructura
+ */
+
+void push(PILA *pila, char car[50]);
+
+/** @brief Operacion correspondiente a suprimir un elemento de la pila
+ * @param pila La estructura a la cual se le suprimira un elemento
+ */
+
+void pop(PILA *pila);
+
+/** @brief Operacion encargada de vizualizar los elementos de la pila
+ * @param pila Se recibe como parametro la estructura que se desea visualizar
+ */
+void print_pila(PILA *pila);
+
+
+#endif
